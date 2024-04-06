@@ -21,6 +21,7 @@
             <th>Email</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +32,41 @@
             <td> {{persona.email}}</td>
             <td><a href="detalle_persona/{{persona.id}}">Ver</a></td>
             <td><a href="editar_persona/{{persona.id}}">Editar</a></td>
+            <td><a href="eliminar_persona/{{persona.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    Numeros de domiciolios: {{no_domicilios}}
+</div>
+<div>
+    <a href="nuevo_domicilio">Agregar Domicilio</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Calle</th>
+            <th>No. Calle</th>
+            <th>País</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for domicilio in domicilios %}
+        <tr>
+            <td>{{domicilio.id}}</td>
+            <td>{{domicilio.calle}}</td>
+            <td> {{domicilio.no_calle}}</td>
+            <td> {{domicilio.pais}}</td>
+            <td><a href="domicilio/{{domicilio.id}}">Ver</a></td>
+            <td><a href="editar_domicilio/{{domicilio.id}}">Editar</a></td>
+            <td><a href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a></td>
         </tr>
         {% endfor %}
         </tbody>
